@@ -1,46 +1,33 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int main() {
-    // Types entiers
-    signed char c1 = -100;
-    unsigned char c2 = 200;
+int main(void) {
+    int a = 16;
+    int b = 3;
 
-    signed short s1 = -20000;
-    unsigned short s2 = 40000;
+    // Opérations arithmétiques (entiers)
+    printf("Addition : %d + %d = %d\n", a, b, a + b);
+    printf("Soustraction : %d - %d = %d\n", a, b, a - b);
+    printf("Multiplication : %d * %d = %d\n", a, b, a * b);
+    printf("Division (entière) : %d / %d = %d\n", a, b, a / b);
+    printf("Division (réelle) : %d / %d = %f\n", a, b, (double)a / (double)b);
+    printf("Modulo : %d %% %d = %d\n", a, b, a % b);
 
-    signed int i1 = -100000;
-    unsigned int i2 = 300000U;
+    // Comparaisons (affichage lisible)
+    bool eq = (a == b);
+    bool gt = (a > b);
+    bool lt = (a < b);
+    bool ne = (a != b);
 
-    signed long int l1 = -2000000000L;
-    unsigned long int l2 = 4000000000UL;
+    printf("a == b ? %s\n", eq ? "true" : "false");
+    printf("a > b ? %s\n", gt ? "true" : "false");
+    printf("a < b ? %s\n", lt ? "true" : "false");
+    printf("a != b ? %s\n", ne ? "true" : "false");
 
-    signed long long int ll1 = -9000000000000000000LL;
-    unsigned long long int ll2 = 18000000000000000000ULL;
-
-    // Types à virgule
-    float f = 3.14F;
-    double d = 2.718281828;
-    long double ld = 1.6180339887L;
-
-    // Affichage
-    printf("signed char : %d\n", c1);
-    printf("unsigned char : %u\n", c2);
-
-    printf("signed short : %d\n", s1);
-    printf("unsigned short : %u\n", s2);
-
-    printf("signed int : %d\n", i1);
-    printf("unsigned int : %u\n", i2);
-
-    printf("signed long int : %ld\n", l1);
-    printf("unsigned long int : %lu\n", l2);
-
-    printf("signed long long int : %lld\n", ll1);
-    printf("unsigned long long int : %llu\n", ll2);
-
-    printf("float : %f\n", f);
-    printf("double : %f\n", d);
-    printf("long double : %Lf\n", ld);
+    // Exemples avec opérateurs logiques
+    printf("(a > 0 && b > 0) ? %s\n", (a > 0 && b > 0) ? "true" : "false");
+    printf("(a > 0 || b < 0) ? %s\n", (a > 0 || b < 0) ? "true" : "false");
 
     return 0;
 }
+
