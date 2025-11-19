@@ -4,10 +4,10 @@ int main() {
     // Déclaration des variables
     short s = 0x0203;
     int i = 0x01020304;
-    long int li = 0x0102030405060708;
-    float f = 9.0f;          // Exemple de float
-    double d = 1.0;          // Exemple de double
-    long double ld = 2.0L;   // Exemple de long double
+    long int li = 0x01020304;  // Utilisation d'une valeur compatible
+    float f = 9.0f;
+    double d = 1.0;
+    long double ld = 2.0L;
 
     unsigned char *ptr;
     int j;
@@ -49,3 +49,16 @@ int main() {
     ptr = (unsigned char*)&d;
     for (j = 0; j < sizeof(d); j++) {
         printf("%02x ", ptr[j]);
+    }
+    printf("\n\n");
+
+    // Affichage des octets d'un long double
+    printf("Octets de long double :\n");
+    ptr = (unsigned char*)&ld;
+    for (j = 0; j < sizeof(ld); j++) {
+        printf("%02x ", ptr[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
