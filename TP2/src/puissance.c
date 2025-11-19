@@ -1,25 +1,37 @@
+/*
+ * Programme : puissance.c
+ * Objectif  : Calculer a^b sans utiliser pow() et sans saisie utilisateur.
+ * Auteur    : (Ton nom)
+ */
+
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int a = 2;       // Base
     int b = 3;       // Exposant
     int resultat = 1;
 
-    printf("Calcul de %d puissance %d\n", a, b);
+    // Affichage initial
+    printf("=== Calcul de la puissance ===\n");
+    printf("Base (a)      : %d\n", a);
+    printf("Exposant (b)  : %d\n", b);
 
-    // Gestion du cas exponent négatif (optionnel)
+    // Vérification d'erreur : exposant négatif interdit pour un résultat entier
     if (b < 0) {
-        printf("Erreur : l'exposant ne peut pas etre negatif pour un resultat entier.\n");
-        return 1;
+        printf("Erreur : l'exposant ne peut pas etre negatif.\n");
+        return 1;   // Fin du programme avec erreur
     }
 
-    // Boucle de calcul de la puissance
-    for (int i = 1; i <= b; i++) {
+    // Calcul de a^b
+    for (int i = 0; i < b; i++) {
         resultat *= a;
     }
 
-    // Affichage du résultat
-    printf("Resultat : %d\n", resultat);
+    // Résultat final
+    printf("Resultat (a^b) : %d\n", resultat);
+    printf("=== Calcul termine ===\n");
 
     return 0;
 }
+
+
