@@ -9,11 +9,11 @@ int main() {
     int i, j, temp;
 
     // Initialisation de la graine pour rand()
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 
     // Remplissage du tableau avec des valeurs aléatoires entre -50 et 100
     for (i = 0; i < TAILLE; i++) {
-        tableau[i] = rand() % 151 - 50; // Valeurs entre -50 et 100
+        tableau[i] = rand() % 151 - 50; // -50 à 100
     }
 
     // Affichage du tableau non trié
@@ -27,7 +27,6 @@ int main() {
     for (i = 0; i < TAILLE - 1; i++) {
         for (j = 0; j < TAILLE - i - 1; j++) {
             if (tableau[j] > tableau[j + 1]) {
-                // Échange des valeurs
                 temp = tableau[j];
                 tableau[j] = tableau[j + 1];
                 tableau[j + 1] = temp;
@@ -36,4 +35,11 @@ int main() {
     }
 
     // Affichage du tableau trié
-    printf(
+    printf("Tableau trié par ordre croissant :\n");
+    for (i = 0; i < TAILLE; i++) {
+        printf("%d ", tableau[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
