@@ -2,14 +2,15 @@
 
 int main(void) {
 
-    int d = 0x00F00000;
+    int d = 123456;
 
-    int bit4  = (d >> (31 - 3)) & 1;
-    int bit20 = (d >> (31 - 19)) & 1;
+    int bit4 = (d >> 28) & 1;
+    int bit20 = (d >> 12) & 1;
 
-    int resultat = (bit4 == 1 && bit20 == 1) ? 1 : 0;
-
-    printf("%d\n", resultat);
+    if (bit4 == 1 && bit20 == 1)
+        printf("1\n");
+    else
+        printf("0\n");
 
     return 0;
 }
