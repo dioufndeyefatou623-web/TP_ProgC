@@ -2,14 +2,16 @@
 
 int main() {
     int n, i;
-    unsigned long long int fib0 = 0, fib1 = 1, nextFib;
-
+    
     // Demande à l'utilisateur de saisir le nombre de termes
-    printf("Entrez le nombre de termes de la suite de Fibonacci: ");
+    printf("Entrez le nombre de termes de la suite de Fibonacci : ");
     if (scanf("%d", &n) != 1 || n < 1) {
         printf("Entrée invalide. Veuillez entrer un entier positif.\n");
         return 1;
     }
+
+    // Cas particulier si n >= 1
+    unsigned long long fib0 = 0, fib1 = 1, nextFib;
 
     printf("Suite de Fibonacci jusqu'au terme %d :\n", n);
 
@@ -29,3 +31,4 @@ int main() {
     printf("\n");
     return 0;
 }
+
